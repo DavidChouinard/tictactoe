@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600);
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+
+/* Typography
+ *
+ * Based on Typebase */
+
+html {
+  font-family: Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/*
+ * Structure
+ */
+
+#container {
+  /*max-width: 700px;*/
+  /*margin: 190px auto 100px;*/
+  /*margin: 120px auto 100px;*/
+}
+
+.tictactoe {
+  position: relative;
+}
+
+.tictactoe table {
+  margin: 80px auto;
+  table-layout: fixed;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+.tictactoe.disabled table {
+  opacity: 0.3;
+}
+
+.tictactoe td {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  border: 1px inset #d3d3d3;
+}
+
+.tictactoe td.empty {
+  cursor: pointer;
+}
+
+.tictactoe:not(.disabled) td.empty:hover {
+  border: 1px solid #888888;
+}
+
+.tictactoe td > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tictactoe:not(.disabled) > .overlay {
+  display: none;
+}
+
+.overlay > div {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.overlay > div > svg {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+}
