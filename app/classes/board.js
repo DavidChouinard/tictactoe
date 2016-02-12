@@ -149,7 +149,7 @@ export default class Board {
 
   findForkCreatingMove(state, symbol) {
     // Currently picks the first fork found. To be optimal, this needs to look at all forks and
-    // and considered yet another downstream move to pick the optimal fork blocking move
+    // consider yet another downstream move to pick the optimal fork blocking move
     var self = this;
     var possible_moves = []
     for (var i = 0; i < state.length; i++) {
@@ -214,7 +214,8 @@ export default class Board {
     var player_winning_move = this.checkIfWinningMoveExists(this.PLAYER_SYMBOL);
     if (player_winning_move !== null) return player_winning_move;
 
-    // TODO: this logic isn't quite optimal
+    // TODO: this logic isn't quite optimal; commented out because it leads to worse behavior.
+    // See comment above.
     //var fork_blocking_move = this.checkIfCanBlockFork();
     //if (fork_blocking_move !== null) return fork_blocking_move;
 
