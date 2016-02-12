@@ -1,9 +1,7 @@
-import Point from "./classes/point"
-
 export default React.createClass({
   onClick: function() {
     if (this.props.symbol == null) {
-      this.props.userPlayedMove(new Point(this.props.i, this.props.j));
+      this.props.userPlayedMove([this.props.i, this.props.j]);
     }
   },
   render: function() {

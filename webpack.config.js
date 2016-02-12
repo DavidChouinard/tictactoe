@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, 'build'),
-    publicPath: '/static/'
+    publicPath: '/build/'
   },
   module: {
     loaders: [
@@ -25,7 +25,6 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       'React':     'react',
-      "_": "underscore"
     })
   ],
 }
